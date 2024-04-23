@@ -1,4 +1,3 @@
-
 // GENERAL COLOURS
 $fio-white: #f1f1f1;
 $fio-purple: #5468cf;
@@ -9,7 +8,14 @@ $color__secondary-accent: $fio-teal;
 
 // BACKGROUNDS
 $color__main-background: #f8f8f8;
-$color__background-gradient: linear-gradient(to right bottom, #ffffff, #eae9f7, #d3d3f0, #b9bfea, #9dabe3);
+$color__background-gradient: linear-gradient(
+  to right bottom,
+  #ffffff,
+  #eae9f7,
+  #d3d3f0,
+  #b9bfea,
+  #9dabe3
+);
 
 // OTHER COLORS
 $color__thumbnail-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08); // Img Thumbnail Shadow
@@ -27,8 +33,8 @@ $color__link-text: $color__accent;
 $color__hover-text: $color__accent;
 
 // FONTS
-$font__main: 'Roboto', Arial, sans-serif;
-$font__heading: 'Poppins', Arial, sans-serif;
+$font__main: "Roboto", Arial, sans-serif;
+$font__heading: "Poppins", Arial, sans-serif;
 $font__body: $font__main;
 
 // FONT WEIGHTS

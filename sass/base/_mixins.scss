@@ -1,62 +1,74 @@
-@use './variables' as *;
+@use "./variables" as *;
 
 // MIXINS
 
 @mixin flexRow {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 @mixin flexColumn {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 @mixin paddingTop {
-    // To push content down the page 
-    // For when header position is fixed and floats on top of the page
-    padding-top: 6rem;
+  // To push content down the page
+  // For when header position is fixed and floats on top of the page
+  padding-top: 6rem;
 }
 @mixin paddingBottom {
-    // Add bottom spacing for when footer is fixed 
-    padding-bottom: 12rem;
+  // Add bottom spacing for when footer is fixed
+  padding-bottom: 12rem;
 }
 @mixin maxWidthContent {
-    // Constrains content to a readable width
-    max-width: 820px;
-    margin: 0 auto;
+  // Constrains content to a readable width
+  max-width: 820px;
+  margin: 0 auto;
 }
 @mixin scrollableContent {
-    // For scrollable content inside a fullscreen div
-    // To achieve the scrollable content over a fixed background with animations look
-    height: 100vh;
-    overflow-y: scroll;
-    z-index: 60;
-    
-    // Hide Scroll Bar
-    scrollbar-width: none; // Firefox
-    -ms-overflow-style: none; // Internet Explorer 10+
+  // For scrollable content inside a fullscreen div
+  // To achieve the scrollable content over a fixed background with animations look
+  height: 100vh;
+  overflow-y: scroll;
+  z-index: 60;
+
+  // Hide Scroll Bar
+  scrollbar-width: none; // Firefox
+  -ms-overflow-style: none; // Internet Explorer 10+
 }
 @mixin hideWebkitScrollbar {
-    width: 0;
-    height: 0;
+  width: 0;
+  height: 0;
 }
 
 // MEDIA QUERIES
 
-@mixin mobileLargeQuery { 
-    @media (min-width: 28em) { @content; } // 448px
+@mixin mobileLargeQuery {
+  @media (min-width: 28em) {
+    @content;
+  } // 448px
 }
 @mixin tabletQuery {
-    @media (min-width: 37.5em) { @content; } // 600px
+  @media (min-width: 37.5em) {
+    @content;
+  } // 600px
 }
 @mixin largeTabletQuery {
-    @media (min-width: 48em) { @content; } // 768px
+  @media (min-width: 48em) {
+    @content;
+  } // 768px
 }
 @mixin medScreenQuery {
-	@media (min-width: 54em) { @content; } // 864px
+  @media (min-width: 54em) {
+    @content;
+  } // 864px
 }
 @mixin desktopQuery {
-    @media (min-width: 64em) { @content; } // 1024px
+  @media (min-width: 64em) {
+    @content;
+  } // 1024px
 }
 @mixin largeDesktopQuery {
-    @media (min-width: 75em) { @content; } // 1200px
+  @media (min-width: 75em) {
+    @content;
+  } // 1200px
 }

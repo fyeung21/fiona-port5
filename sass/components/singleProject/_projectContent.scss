@@ -2,89 +2,91 @@
 @use "../../base/mixins" as *;
 
 .page-single-project {
+  @include desktopQuery {
+    @include paddingTop; // Push page down because of fixed header
+  }
+
+  .project-content-container {
+    padding: 2rem 0 3rem;
+
     @include desktopQuery {
-        @include paddingTop; // Push page down because of fixed header
+      padding: 3rem 0 5rem;
     }
 
-    .project-content-container {
-        padding: 2rem 0 3rem;
+    .tabs-container {
+      padding: 2rem 0 2rem;
+      border-bottom: 2px solid $color__shadow;
 
-        @include desktopQuery {
-            padding: 3rem 0 5rem;
-        }
+      @include desktopQuery {
+        @include maxWidthContent; // Constrains content to a readable width
+      }
 
-        .tabs-container {
-            padding: 2rem 0 2rem;
-            border-bottom: 2px solid $color__shadow;
+      .tab-panel {
+        section {
+          ul {
+            list-style: disc;
+            padding-inline-start: 40px;
+          }
+          li {
+            padding: 0 0 1rem 0.5rem;
+          }
+          a {
+            color: $color__link-text;
+            font-weight: 500;
 
-            @include desktopQuery {
-                @include maxWidthContent; // Constrains content to a readable width
+            &:hover {
+              text-decoration: underline;
             }
-
-            .tab-panel {
-                section {
-                    ul {
-                        list-style: disc;
-                        padding-inline-start: 40px;
-                    }
-                    li {
-                        padding: 0 0 1rem 0.5rem;
-                    }
-                    a {
-                        color: $color__link-text;
-                        font-weight: 500;
-
-                        &:hover {
-                            text-decoration: underline;
-                        }
-                    }
-                }
-                
-            }
-
-            .tab-list {
-                @include flexRow;
-                margin-bottom: 2rem;
-
-                .react-tabs__tab {
-                    width: 200px;
-                    border: none;
-                    background: transparent;
-                    cursor: pointer;
-                    opacity: 0.4;
-                    text-align: center;
-                    outline: 0;
-                    padding: 0.5rem 0;
-                    margin: 0 0.5rem;
-                    transition: border 0.2s ease-out, opacity 0.2s ease-out;
-
-                    &:first-child {
-                        margin-left: 0;
-                    }
-
-                    &:hover,
-                    &:focus,
-                    &:active {
-                        opacity: 1;
-                        border-bottom: 3px solid $color__accent;
-                        transition: all 0.3s ease-out;
-                    } 
-                }
-                .react-tabs__tab--selected {
-                    opacity: 1;
-                    border-bottom: 3px solid $color__accent;
-                }
-            }
+          }
         }
+      }
 
-        .img-container {
-            width: 600px;
-            margin: 0 auto;
+      .tab-list {
+        @include flexRow;
+        margin-bottom: 2rem;
+
+        .react-tabs__tab {
+          width: 200px;
+          border: none;
+          background: transparent;
+          cursor: pointer;
+          opacity: 0.4;
+          text-align: center;
+          outline: 0;
+          padding: 0.5rem 0;
+          margin: 0 0.5rem;
+          transition:
+            border 0.2s ease-out,
+            opacity 0.2s ease-out;
+
+          &:first-child {
+            margin-left: 0;
+          }
+
+          &:hover,
+          &:focus,
+          &:active {
+            opacity: 1;
+            border-bottom: 3px solid $color__accent;
+            transition: all 0.3s ease-out;
+          }
         }
+        .react-tabs__tab--selected {
+          opacity: 1;
+          border-bottom: 3px solid $color__accent;
+        }
+      }
     }
+
+    .img-container {
+      width: 600px;
+      margin: 0 auto;
+    }
+  }
 }
 
 // Hide scroll bar for Safari Browser
-.page-single-project::-webkit-scrollbar { // WebKit
-    @include hideWebkitScrollbar;
+.page-single-project::-webkit-scrollbar {
+  // WebKit
+  @include hideWebkitScrollbar;
 }

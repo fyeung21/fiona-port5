@@ -1,18 +1,28 @@
-import { Links, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
-import { Analytics } from '@vercel/analytics/react';
-import type { LinksFunction } from '@remix-run/node';
-import styles from './styles/styles.css?url';
+import {
+  Links,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+} from "@remix-run/react";
+import { Analytics } from "@vercel/analytics/react";
+import type { LinksFunction } from "@remix-run/node";
+import styles from "./styles/styles.css?url";
 
 export const links: LinksFunction = () => {
   return [
-    { rel: 'stylesheet', href: styles },
-    { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-    { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' },
+    { rel: "stylesheet", href: styles },
+    { rel: "preconnect", href: "https://fonts.googleapis.com" },
     {
-      rel: 'stylesheet',
-      href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Roboto:wght@300;400;500&display=swap',
+      rel: "preconnect",
+      href: "https://fonts.gstatic.com",
+      crossorigin: "anonymous",
     },
-    { rel: 'stylesheet', href: 'https://unpkg.com/aos@2.3.1/dist/aos.css' },
+    {
+      rel: "stylesheet",
+      href: "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Roboto:wght@300;400;500&display=swap",
+    },
+    { rel: "stylesheet", href: "https://unpkg.com/aos@2.3.1/dist/aos.css" },
   ];
 };
 

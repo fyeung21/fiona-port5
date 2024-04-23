@@ -1,42 +1,42 @@
 // BASE
 
-@use './base/normalize';
-@use './base/variables';
-@use './base/mixins';
-@use './base/general';
+@use "./base/normalize";
+@use "./base/variables";
+@use "./base/mixins";
+@use "./base/general";
 
 // COMPONENTS
 
 /* Loader */
-@use './components/loader/loader';
+@use "./components/loader/loader";
 
 /* Header */
-@use './components/header/header';
-@use './components/header/navigation';
+@use "./components/header/header";
+@use "./components/header/navigation";
 
 /* NavBar */
-@use './components/navBar/navBar';
-@use './components/navBar/contactPopup';
+@use "./components/navBar/navBar";
+@use "./components/navBar/contactPopup";
 
 /* Footer */
-@use './components/footer/footer';
+@use "./components/footer/footer";
 
 /* Main Projects Page */
-@use './components/mainProjects/mainProjects';
-@use './components/mainProjects/projectCard';
-@use './components/particleEffect/particleEffect';
+@use "./components/mainProjects/mainProjects";
+@use "./components/mainProjects/projectCard";
+@use "./components/particleEffect/particleEffect";
 
 /* About Page */
-@use './components/about/about';
+@use "./components/about/about";
 
 /* Contact Page */
-@use './components/contact/contact';
+@use "./components/contact/contact";
 
 /* Single Project */
-@use './components/singleProject/bannerImg';
-@use './components/singleProject/projectNav';
-@use './components/singleProject/stats';
-@use './components/singleProject/projectContent';
+@use "./components/singleProject/bannerImg";
+@use "./components/singleProject/projectNav";
+@use "./components/singleProject/stats";
+@use "./components/singleProject/projectContent";
 
 /* Page 404 */
-@use './components/page404/page404';
+@use "./components/page404/page404";

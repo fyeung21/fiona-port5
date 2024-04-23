@@ -10,6 +10,7 @@
     "dev": "run-p dev:*",
     "dev:css": "sass --watch sass/styles.scss app/styles/styles.css",
     "dev:remix": "remix vite:dev",
+    "format": "prettier --write ./",
     "typecheck": "tsc"
   },
   "dependencies": {
