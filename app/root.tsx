@@ -1,11 +1,9 @@
-import {
-  Links,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-} from "@remix-run/react";
-import { Analytics } from "@vercel/analytics/react";
+import { Links, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
+import { Analytics } from '@vercel/analytics/react';
+import type { LinksFunction } from '@remix-run/node';
+import styles from './styles/styles.css?url';
+
+export const links: LinksFunction = () => [{ rel: 'stylesheet', href: styles }];
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
