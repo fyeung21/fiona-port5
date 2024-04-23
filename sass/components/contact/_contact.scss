@@ -1,0 +1,64 @@
+@use "../../base/variables" as *;
+@use "../../base/mixins" as *;
+
+.page-contact {
+    @include desktopQuery {
+        @include maxWidthContent; // Constrains content to a readable width
+        @include paddingTop; // Push page down because of fixed header
+    }
+
+    footer {
+        @include tabletQuery {
+            position: relative; // Undo position fixed from footer proper
+        }
+
+        .footer-container {
+            @include tabletQuery {
+                display: block; // Remove flex in footer-container, declared in footer proper
+            }
+
+            cite {
+                // Remove copyright info because of reused footer component
+                display: none;
+            }
+
+            div {
+                // Display contact icons
+                display: block;
+
+                ul {
+                    // Have contact icons be in column alignment
+                    @include flexColumn;
+                    align-items: center;
+
+                    li {
+                        // Adjustments to spacing between icon items
+                        background: $color__card-background; // Frosted glass effect
+                        padding: 3rem 0;
+                        margin: 1rem auto;
+                        border-radius: 15px;
+                        transition: all 0.3s linear;
+
+                        &:hover,
+                        &:focus {
+                            box-shadow: $color__card-shadow; // Lifting effect with shadow upon hover
+                            backdrop-filter: blur(5px);
+                            -webkit-backdrop-filter: blur(5px);
+                            transform: translateY(-0.25em);
+                            transition: all 0.3s linear;
+                        }
+
+                        a {
+                            // Adjustments to clickable link area (more padding for thumb presses)
+                            padding: 3rem 9rem;
+
+                            @include tabletQuery {
+                                padding: 3rem 12rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

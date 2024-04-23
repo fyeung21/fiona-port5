@@ -1,0 +1,82 @@
+@use "../../base/variables" as *;
+@use "../../base/mixins" as *;
+
+.project-navigation {
+    @include maxWidthContent; // Constrains content to a readable width
+
+    .project-nav-heading-container {
+        // "More Projects" subheading container
+        @include flexRow;
+        align-items: baseline;
+
+        h3 {
+            &:first-of-type {
+                // For "More Projects" Subheading
+                text-transform: capitalize;
+                margin-right: 1rem;
+            }
+        }
+
+        // "Scroll for more" help text
+        p {
+            &:first-of-type {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    // Undo Home Page's content scroll with fixed bkg for project navigation
+    .page-home {
+        @include largeDesktopQuery {
+            padding: 0 0 4rem;
+        }
+        height: fit-content;
+        overflow-y: visible;
+        z-index: 60;
+
+        .welcome-message {
+            display: none; // Remove welcome message when on project nav
+        }
+
+        // Project Navigation Carousel
+        .main-projects-container {
+            @include flexRow;
+            overflow-x: scroll; // Add horizontal scroll for Carousel effect
+            margin: 0 auto 2rem;
+            padding: 2rem 0 2.5rem;
+
+            @include largeDesktopQuery {
+                margin: 0 auto 3rem; // Increase margin bottom of carousel to allow access to horizontal scroll when footer is position absolute
+            }
+
+            .project-card-container {
+                padding: 1.25rem 1rem 0 1rem;
+
+                // Affects text and thumbnail content sections inside the project card
+                .card-content-container {
+                    width: 280px; //Set thumbnail size
+                    @include flexColumn; // Undo flex row from homepage's styling
+
+                    .card-text-container {
+                        margin: 0;
+                        p {
+                            display: none; // Remove short description in card for project nav
+                        }
+                    }
+                    // Affects list of technologies on project card
+                    .project-type-container {
+                        ul {
+                            justify-content: flex-end; // Right align text
+                            font-weight: 400;
+                            margin-bottom: 0.5rem;
+
+                            li {
+                                margin: 0 0 0 1rem; // Spacing for right align text
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

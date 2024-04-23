@@ -1,0 +1,81 @@
+@use "../../base/variables" as *;
+@use "../../base/mixins" as *;
+
+footer {
+    // Make footer fixed at bottom for desktop or larger screens
+    @include desktopQuery {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 80;
+
+        @include flexRow;
+        padding-bottom: 1rem;
+    }
+
+    .footer-container {
+        @include tabletQuery {
+            @include flexRow;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px; // Makes footer responsive
+            width: 100%;
+        }
+        @include desktopQuery {
+            margin: 0 2rem;
+        }
+
+        @include largeDesktopQuery {
+            margin: 0 auto;
+        }
+
+        cite {
+            // Display copyright message at bottom of page in mobile view
+            font-size: 0.75rem;
+            padding-bottom: 5.5rem;
+
+            @include tabletQuery {
+                padding-bottom: 0;
+            }
+        }
+
+        div {
+            // Footer Icon Links
+            display: none;
+            @include tabletQuery {
+                display: block;
+            }
+
+            ul {
+                @include flexRow;
+                justify-content: space-between;
+                text-transform: capitalize;
+                margin: 0.5rem auto;
+
+                li {
+                    @include tabletQuery {
+                        transition: all 0.3s ease-out; //Animation: Text drops back to default
+                        margin-left: 0.5rem;
+                    }
+
+                    &:hover {
+                        transform: translateY(-0.25em);
+                        transition: all 0.3s ease-out; //Animation: Text lifts upwards
+                    }
+
+                    a {
+                        color: $color__main-text;
+                        transition: all 0.3s ease-out; //Animation: Accent colour fades out
+                        padding: 0 1rem;
+
+                        &:hover {
+                            color: $color__accent;
+                            transition: all 0.3s ease-out; //Animation: Accent colour fades in
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,45 @@
+@use "../../base/variables" as *;
+@use "../../base/mixins" as *;
+
+.bottom-nav-bar {
+    nav {
+        // Navbar "bar-like" styles that is fixed to bottom of page
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 90;
+        background-color: $color__nav-background;
+        backdrop-filter: blur(5px);
+        border-top: 1px solid rgba(255, 255, 255, 0.8);
+
+        @include tabletQuery {
+            display: none;
+        }
+
+        ul {
+            // List content inside Navbar
+            @include flexRow;
+            justify-content: space-between;
+            margin: 0.5rem 0 1rem;
+
+            li {
+                a {
+                    // Combines svg and p tag together
+                    @include flexColumn;
+                    align-items: center;
+                    padding: 0.25rem 1rem 0;
+                    &:hover,
+                    &:focus {
+                        color: $color__accent;
+                    }
+                }
+                p {
+                    // Text nav labels under the svg icons
+                    margin: 0;
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+}

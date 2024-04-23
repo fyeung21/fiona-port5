@@ -1,0 +1,115 @@
+@use "../../base/variables" as *;
+@use "../../base/mixins" as *;
+
+// PROJECT SUMMARY
+.stats-container {
+    @include largeTabletQuery {
+        width: 100%;
+        margin: 0 auto;
+    }
+    @include desktopQuery {
+        max-width: 820px;
+    }
+
+    // For Project Title, Brief, and CTAs
+    .primary-summary-container {
+        @include flexColumn;
+
+        @include largeTabletQuery {
+            @include flexRow;
+            justify-content: space-between;
+            margin: 3rem auto;
+        }
+
+        //Project Title
+        .title-container {
+            @include largeTabletQuery {
+                width: 75%;
+            }
+        }
+
+        // CTAs
+        .cta-container {
+            @include flexColumn;
+            align-items: center;
+
+            a {
+                margin: 1rem 1rem 1rem 0;
+                padding: 1rem;
+                background-color: $color__accent;
+                color: $color__invert-text;
+                letter-spacing: 0.5px;
+                text-transform: capitalize;
+                transition: all 0.3s linear;
+
+                &:hover,
+                &:focus {
+                    box-shadow: $color__button-hover-shadow;
+                    transform: translateY(-0.25em);
+                    transition: all 0.3s linear;
+                }
+
+                &:first-child {
+                    background-color: $color__secondary-accent;
+                    padding: 1rem 2.25rem;
+
+                    @include largeTabletQuery {
+                        margin: 0 0 2rem;
+                    }
+                }
+                &:nth-child(2) {
+                    padding: 1rem 1.25rem;
+
+                    @include largeTabletQuery {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    // For Platforms and Technologies
+    .secondary-summary-container {
+        @include largeTabletQuery {
+            @include flexRow;
+            margin: 2rem auto;
+        }
+
+        article {
+            @include largeTabletQuery {
+                margin-right: 4rem;
+            }
+        }
+
+        ul {
+            // For Column Lists
+            &:nth-child(odd) {
+                @include flexColumn;
+
+                @include largeTabletQuery {
+                    display: none;
+                }
+            }
+            // For Row Lists
+            &:nth-child(even) {
+                display: none;
+
+                @include largeTabletQuery {
+                    @include flexRow;
+                    flex-wrap: wrap;
+                }
+
+                // Add Commas to List Items for Row Lists
+                li {
+                    margin-right: 1rem;
+                    &::after {
+                        content: ", ";
+                    }
+                    &:last-of-type:after {
+                        content: "";
+                    }
+                }
+            }
+        }
+    }
+}

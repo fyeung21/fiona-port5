@@ -1,0 +1,42 @@
+@use "../../base/variables" as *;
+@use "../../base/mixins" as *;
+
+header {
+    position: relative;
+
+    @include desktopQuery {
+        position: fixed;
+        left: 0;
+        right: 0;
+        z-index: 80;
+    }
+
+    .skip-link {
+        left: 0;
+        padding: 4px;
+        position: absolute;
+        transform: translateY(-100%);
+        transition: transform 0.3s;
+
+        &:focus {
+            transform: translateY(0%);
+            color: $color__main-text;
+        }
+    }
+
+    .header-container {
+        @include flexRow;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 1rem;
+
+        @include tabletQuery {
+            margin: 0 2rem;
+        }
+
+        @include largeDesktopQuery {
+            margin: 0 auto;
+        }
+    }
+}

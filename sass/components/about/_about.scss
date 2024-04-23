@@ -1,0 +1,76 @@
+@use "../../base/variables" as *;
+@use "../../base/mixins" as *;
+
+.page-about {
+    @include desktopQuery {
+        @include maxWidthContent; // Constrains content to a readable width
+        @include paddingTop; // Push page down because of fixed header
+        @include paddingBottom; // Adding space between end of content and bottom of window for when footer is fixed
+    }
+
+    .bio-container {
+        @include tabletQuery {
+            margin-bottom: 5rem;
+        }
+        @include desktopQuery {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .bio-img-container {
+            width: 200px;
+            height: 200px;
+            margin: 1.5rem auto;
+
+            @include tabletQuery {
+                width: 250px;
+                height: 250px;
+            }
+            @include desktopQuery {
+                order: 1;
+                margin: 1.25rem 0;
+            }
+
+            img {
+                border-radius: 50%;
+            }
+        }
+
+        .bio-text-container {
+            @include desktopQuery {
+                width: 550px;
+            }
+
+            .location {
+                font-weight: 600;
+            }
+        }
+    }
+
+    .skills-container {
+        margin: 0 auto 4rem;
+
+        @include desktopQuery {
+            margin: 0 auto 2rem;
+        }
+
+        h3 {
+            text-transform: capitalize;
+        }
+        div {
+            @include largeTabletQuery {
+                @include flexRow;
+                justify-content: space-between;
+                width: 70%;
+            }
+            @include desktopQuery {
+                width: 60%;
+            }
+        }
+    }
+}
+
+// Hide scroll bar for Safari Browser
+.page-about::-webkit-scrollbar {
+    @include hideWebkitScrollbar;
+}

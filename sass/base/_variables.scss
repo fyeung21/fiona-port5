@@ -1,0 +1,47 @@
+
+// GENERAL COLOURS
+$fio-white: #f1f1f1;
+$fio-purple: #5468cf;
+$fio-teal: #018d8b;
+$color__main: $fio-white;
+$color__accent: $fio-purple;
+$color__secondary-accent: $fio-teal;
+
+// BACKGROUNDS
+$color__main-background: #f8f8f8;
+$color__background-gradient: linear-gradient(to right bottom, #ffffff, #eae9f7, #d3d3f0, #b9bfea, #9dabe3);
+
+// OTHER COLORS
+$color__thumbnail-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08); // Img Thumbnail Shadow
+$color__card-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); // Glass Card Shadow
+$color__card-background: rgba(255, 255, 255, 0.3); // Glass Card Background
+$color__shadow: #8d8d99; // Bottom Border line after Tabs in Single Project
+$color__button-hover-shadow: 0 0.75em 0.75em -0.4em gray;
+$color__nav-background: rgba(255, 255, 255, 0.6); // Bkg Color of Nav Links
+$color__code-bkg: rgba(255, 255, 255, 0.4); //Bkg for code text highlights
+
+// FONT COLOURS
+$color__main-text: #121212;
+$color__invert-text: #f8f8f8;
+$color__link-text: $color__accent;
+$color__hover-text: $color__accent;
+
+// FONTS
+$font__main: 'Roboto', Arial, sans-serif;
+$font__heading: 'Poppins', Arial, sans-serif;
+$font__body: $font__main;
+
+// FONT WEIGHTS
+$font__weight-body: 500;
+$font__weight-heading: 800;
+
+// MEDIA QUERIES
+$tablet: 37.5em;
+// 768 px -- large tablets
+$large-tablet: 48em;
+// 1024px  -- laptops
+$desktop: 64em;
+// 1200px -- med-screen
+$med-screen: 75em;
+// 1440px -- large screen
+$large-screen: 90em;
